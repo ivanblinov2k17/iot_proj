@@ -1,0 +1,48 @@
+<circuit noLinAcc="5" speed="1000000" type="simulide_0.1" noLinStep="10" reactStep="50" animate="0">
+ 
+Node-19: 
+<item x="-220" valLabely="0" itemtype="Node" hflip="1" valLabRot="0" y="108" labelrot="0" labelx="-16" valLabelx="0" Show_id="false" labely="-24" id="Node-19" rotation="0" objectName="Node-19" vflip="1"/>
+ 
+Node-16: 
+<item x="-364" valLabely="0" itemtype="Node" hflip="1" valLabRot="0" y="148" labelrot="0" labelx="-16" valLabelx="0" Show_id="false" labely="-24" id="Node-16" rotation="0" objectName="Node-16" vflip="1"/>
+ 
+Potentiometer-11: 
+<item valLabelx="10" valLabely="-20" x="-420" valLabRot="0" id="Potentiometer-11" Show_id="false" labely="-24" objectName="Potentiometer-11" hflip="1" Unit=" kΩ" vflip="1" labelrot="0" rotation="0" Resistance="1" itemtype="Potentiometer" Show_res="true" y="-52" Value_Ohm="612" labelx="-16"/>
+ 
+Arduino Uno-2: 
+<item valLabelx="0" valLabely="0" x="-372" valLabRot="0" id="Arduino Uno-2" Ser_Port="true" Show_id="true" labely="-20" objectName="Arduino Uno-2" hflip="1" Mhz="16" vflip="1" labelrot="0" Ser_Monitor="true" rotation="0" itemtype="Arduino" Program="/home/ivanblinov/.local/share/simulide/codeeditor/buildIno/analog_serial_test.ino.hex" y="12" labelx="0"/>
+ 
+Potentiometer-1: 
+<item valLabelx="10" valLabely="-20" x="-340" valLabRot="0" id="Potentiometer-1" Show_id="false" labely="-24" objectName="Potentiometer-1" hflip="1" Unit=" kΩ" vflip="1" labelrot="0" rotation="0" Resistance="1" itemtype="Potentiometer" Show_res="true" y="-52" Value_Ohm="851" labelx="-16"/>
+ 
+Connector-3: 
+<item valLabelx="0" valLabely="0" x="-340" valLabRot="0" id="Connector-3" Show_id="false" labely="-24" objectName="Connector-3" hflip="1" startpinid="Potentiometer-1-PinM" vflip="1" labelrot="0" enodeid="Circ_eNode-4" rotation="0" itemtype="Connector" pointList="-340,-36,-340,68,-220,68" y="-36" endpinid="Arduino Uno-2-PC0" labelx="-16"/>
+ 
+Connector-5: 
+<item valLabelx="0" valLabely="0" x="-356" valLabRot="0" id="Connector-5" Show_id="false" labely="-24" objectName="Connector-5" hflip="1" startpinid="Potentiometer-1-PinA" vflip="1" labelrot="0" enodeid="enode-15" rotation="0" itemtype="Connector" pointList="-356,-52,-356,148,-364,148" y="-52" endpinid="Node-16-0" labelx="-16"/>
+ 
+Connector-15: 
+<item valLabelx="0" valLabely="0" x="-436" valLabRot="0" id="Connector-15" Show_id="false" labely="-24" objectName="Connector-15" hflip="1" startpinid="Potentiometer-11-PinA" vflip="1" labelrot="0" enodeid="enode-15" rotation="0" itemtype="Connector" pointList="-436,-52,-436,148,-364,148" y="-52" endpinid="Node-16-1" labelx="-16"/>
+ 
+Connector-17: 
+<item valLabelx="0" valLabely="0" x="-364" valLabRot="0" id="Connector-17" Show_id="false" labely="-24" objectName="Connector-17" hflip="1" startpinid="Node-16-2" vflip="1" labelrot="0" enodeid="enode-15" rotation="0" itemtype="Connector" pointList="-364,148,-364,148" y="148" endpinid="Arduino Uno-2-GND0" labelx="-16"/>
+ 
+Connector-18: 
+<item valLabelx="0" valLabely="0" x="-404" valLabRot="0" id="Connector-18" Show_id="false" labely="-24" objectName="Connector-18" hflip="1" startpinid="Potentiometer-11-PinB" vflip="1" labelrot="0" enodeid="enode-7" rotation="0" itemtype="Connector" pointList="-404,-52,-404,108,-220,108" y="-52" endpinid="Node-19-1" labelx="-16"/>
+ 
+Connector-20: 
+<item valLabelx="0" valLabely="0" x="-220" valLabRot="0" id="Connector-20" Show_id="false" labely="-24" objectName="Connector-20" hflip="1" startpinid="Node-19-2" vflip="1" labelrot="0" enodeid="enode-7" rotation="0" itemtype="Connector" pointList="-220,108,-220,108" y="108" endpinid="Arduino Uno-2-V5V" labelx="-16"/>
+ 
+Connector-7: 
+<item valLabelx="0" valLabely="0" x="-324" valLabRot="0" id="Connector-7" Show_id="false" labely="-24" objectName="Connector-7" hflip="1" startpinid="Potentiometer-1-PinB" vflip="1" labelrot="0" enodeid="enode-7" rotation="0" itemtype="Connector" pointList="-324,-52,-236,-52,-236,108,-220,108" y="-52" endpinid="Node-19-0" labelx="-16"/>
+ 
+Connector-24: 
+<item valLabelx="0" valLabely="0" x="-420" valLabRot="0" id="Connector-24" Show_id="false" labely="-24" objectName="Connector-24" hflip="1" startpinid="Potentiometer-11-PinM" vflip="1" labelrot="0" enodeid="enode-24" rotation="0" itemtype="Connector" pointList="-420,-36,-420,60,-220,60" y="-36" endpinid="Arduino Uno-2-PC1" labelx="-16"/>
+ 
+PlotterWidget-9: 
+<item windowFilePath="" acceptDrops="false" minimumSizeHint="" isActiveWindow="true" windowModified="false" sizeHint="" windowIconText="" layoutDirection="0" minimumHeight="200" maximumHeight="200" minimumWidth="200" sizePolicy="" locale="" size="" modal="false" childrenRegion="" maximumWidth="1000" statusTip="" windowTitle="" tabletTracking="false" geometry="" accessibleDescription="" frameSize="" maximized="false" MinVolt="-500" height="200" accessibleName="" minimumSize="" baseSize="" y="0" frameGeometry="" mouseTracking="false" updatesEnabled="true" whatsThis="" windowOpacity="1" toolTip="" focusPolicy="0" palette="" normalGeometry="" objectName="PlotterWidget-9" contextMenuPolicy="1" autoFillBackground="false" focus="false" cursor="" styleSheet="" sizeIncrement="" childrenRect="" inputMethodHints="0" MaxVolt="500" rect="" itemtype="Plotter" minimized="false" toolTipDuration="-1" x="0" visible="false" enabled="true" fullScreen="false" maximumSize="" width="200" windowIcon="" pos="" windowModality="0" font="Sans Serif,9,-1,5,50,0,0,0,0,0"/>
+ 
+SerialPortWidget-10: 
+<item windowFilePath="" acceptDrops="false" minimumSizeHint="" isActiveWindow="true" windowModified="false" sizeHint="" windowIconText="" layoutDirection="0" minimumHeight="0" maximumHeight="170" minimumWidth="0" sizePolicy="" locale="" size="" modal="false" childrenRegion="" maximumWidth="450" statusTip="" windowTitle="Configuracion" tabletTracking="false" geometry="" accessibleDescription="" frameSize="" maximized="false" height="170" accessibleName="" minimumSize="" baseSize="" y="903" frameGeometry="" mouseTracking="false" updatesEnabled="true" whatsThis="" windowOpacity="1" toolTip="" focusPolicy="0" palette="" normalGeometry="" objectName="SerialPortWidget-10" contextMenuPolicy="1" autoFillBackground="false" focus="false" SettingsProp="/dev/pts/6,0,3,0,1,0" cursor="" styleSheet="" sizeIncrement="" childrenRect="" inputMethodHints="0" rect="" itemtype="SerialPort" minimized="false" toolTipDuration="-1" x="437" visible="true" enabled="true" fullScreen="false" maximumSize="" width="351" windowIcon="" pos="" windowModality="0" font="Sans Serif,9,-1,5,50,0,0,0,0,0"/>
+ 
+</circuit>
