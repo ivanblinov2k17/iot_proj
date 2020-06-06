@@ -3,6 +3,7 @@ const Readline = require("@serialport/parser-readline");
 const fetch = require("node-fetch");
 const cors = require('cors')
 const sensors_output = [];
+var mes_id = 1;
 
 const s_port = new SerialPort("/dev/pts/5", {
     baudRate: 9600,
@@ -64,12 +65,14 @@ app.get("/", (request, response) => {
 app.post("/", (request, response) => {
     console.log(request.body.arr);
     measurement = {
-        id: request.body.arr[0],
+        id: mes_id,
+        id_client: request.body.arr[0],
         hydration: request.body.arr[1],
         height: request.body.arr[2],
-        coords: request.body.arr[3]
+        coords: [request.body.arr[3], request.body.arr[4]]
     }
     sensors_output.push(measurement)
+    mes_id += 1;
     response.send(JSON.parse('{"text": "accepted"}'));
 });
 app.listen(port, (err) => {
