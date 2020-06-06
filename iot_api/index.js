@@ -1,7 +1,7 @@
 const SerialPort = require("serialport");
 const Readline = require("@serialport/parser-readline");
 const fetch = require("node-fetch");
-
+const cors = require('cors')
 const sensors_output = [];
 
 const s_port = new SerialPort("/dev/pts/5", {
@@ -13,7 +13,7 @@ const s_port = new SerialPort("/dev/pts/5", {
 async function postData(url = "", data = {}) {
     const response = await fetch(url, {
         method: "POST",
-        mode: "cors",
+        mode: "no-cors",
         cache: "no-cache",
         credentials: "same-origin",
         headers: {
@@ -54,9 +54,12 @@ app.use(
         extended: true,
     })
 );
+app.use(cors())
 app.use(bodyParser.json());
 app.get("/", (request, response) => {
-    response.send("Hello world!");
+    response.setHeader('Access-Control-Allow-Origin', '*');
+    response.setHeader('Access-Control-Allow-Headers', 'origin, content-type, accept');
+    response.send(sensors_output);
 });
 app.post("/", (request, response) => {
     console.log(request.body.arr);
@@ -67,7 +70,6 @@ app.post("/", (request, response) => {
         coords: request.body.arr[3]
     }
     sensors_output.push(measurement)
-    console.log(sensors_output)
     response.send(JSON.parse('{"text": "accepted"}'));
 });
 app.listen(port, (err) => {
