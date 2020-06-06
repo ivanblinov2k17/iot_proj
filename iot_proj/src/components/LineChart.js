@@ -6,8 +6,8 @@ export default {
     mixins: [reactiveProp],
     props: ['options'],
     mounted() {
-        // this.chartData is created in the mixin.
-        // If you want to pass options please create a local options object
+        // this.chartData создаётся внутри миксина.
+        // Если вы хотите передать опции, создайте локальный объект options
         this.renderChart(this.chartData, this.options)
     }
 }

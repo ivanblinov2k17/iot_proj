@@ -1,6 +1,6 @@
 <template>
   <div class="small">
-    <line-chart :chart-data="datacollection"></line-chart>
+    <line-chart :chartData="{datasets:[{data: yo}]}"></line-chart>
     <button @click="fillData()">Randomize</button>
   </div>
 </template>
@@ -12,6 +12,7 @@ export default {
   components: {
     LineChart
   },
+  props: { yo: Array },
   data() {
     return {
       datacollection: null
@@ -28,12 +29,7 @@ export default {
           {
             label: "Data One",
             backgroundColor: "#f87979",
-            data: [this.getRandomInt(), this.getRandomInt()]
-          },
-          {
-            label: "Data One",
-            backgroundColor: "#f87979",
-            data: [this.getRandomInt(), this.getRandomInt()]
+            data: this.yo
           }
         ]
       };

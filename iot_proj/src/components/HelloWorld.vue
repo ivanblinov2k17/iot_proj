@@ -1,7 +1,10 @@
 <template>
   <div class="hello">
-    <Chart :chartData="b_array" />
-    <div v-for="item in connected_ids" :key="item">{{item}}</div>
+    <div v-for="item in measures_by_id" :key="item.id">
+      <Chart v-if="loaded" :yo="hy_array" />
+      <Chart v-if="loaded" :yo="he_array" />
+    </div>
+    {{hy_array}}
   </div>
 </template>
 
@@ -20,8 +23,11 @@ export default {
       all_measures: null,
       connected_ids: [],
       measures_by_id: [],
-      b_array: [0.1, 0.2, 0.3],
-      last_mes_id: 0
+      hy_array: [],
+      he_array: [],
+      co_array: [],
+      last_mes_id: 0,
+      loaded: 0
     };
   },
   methods: {
@@ -29,6 +35,7 @@ export default {
       let self = this;
       this.polling = setInterval(() => {
         axios.get("http://localhost:3000/").then(response => {
+          self.loaded = 1;
           let watch = 0;
           self.all_measures = response;
           let last_client = response.data[response.data.length - 1].id_client;
@@ -52,16 +59,15 @@ export default {
           ) {
             self.measures_by_id.forEach(el => {
               if (el.id == last_client) {
-                el.values.push([response.data[response.data.length - 1]]);
+                el.values.push(response.data[response.data.length - 1]);
               }
             });
-            self.last_mes_id = response.data[response.data.length - 1].id;
-
-            console.log(
-              self.measures_by_id,
-              self.last_mes_id,
-              response.data[response.data.length - 1].id
+            self.hy_array.push(
+              response.data[response.data.length - 1].hydration
             );
+            self.he_array.push(response.data[response.data.length - 1].height);
+            self.co_array.push(response.data[response.data.length - 1].coords);
+            self.last_mes_id = response.data[response.data.length - 1].id;
           }
           watch = 0;
         }); //here we need to get info from api
